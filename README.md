@@ -36,6 +36,8 @@ To seamlessly integrate the Birthday Greetings Scheduler into your program, you 
 
 ### Create User
 
+To create a user, make a POST request to the /users endpoint with the following cURL command:
+
 ```bash
    curl -X POST -H "Content-Type: application/json" -d '{
         "firstName": "John",
@@ -50,3 +52,19 @@ To seamlessly integrate the Birthday Greetings Scheduler into your program, you 
 
 ```
 
+### Get User Information
+
+Retrieve user information by making a GET request to the /users endpoint.
+
+```bash
+   curl --location 'localhost:3000/users'
+```
+
+
+### Delete User
+
+Delete a user by making a DELETE request to the /users/{userId} endpoint.
+
+```bash
+   curl --location --request DELETE 'localhost:3000/users/:userId'
+```
