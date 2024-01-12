@@ -1,6 +1,6 @@
 # Birthday Greetings Schedule
 
-Brief description or tagline about your project.
+A simple application to send a happy birthday message to users on their birthday at exactly 9 am on their local time. For example, if one user is in New York and the second user is in Melbourne, they should be getting a birthday message in their own time zone.
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ Brief description or tagline about your project.
 
 ## Introduction
 
-A simple application to send a happy birthday message to users on their birthday at exactly 9 am on their local time. For example, if one user is in New York and the second user is in Melbourne, they should be getting a birthday message in their own time zone
+Automatically send heartwarming birthday messages to users at exactly 9 am on their local time.
 
 ## Getting Started
 
