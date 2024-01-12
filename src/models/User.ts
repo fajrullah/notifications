@@ -1,7 +1,7 @@
 // src/models/User.ts
 import { Document, Schema, model } from 'mongoose';
 
-interface IUser extends Document {
+export interface IUser extends Document {
   firstName: string;
   lastName: string;
   birthday: Date;

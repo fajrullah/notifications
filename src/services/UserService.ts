@@ -13,8 +13,7 @@ class UserService {
 
   static async createUser(userData: any) {
     try {
-      const newUser = new User(userData);
-      await newUser.save();
+      const newUser = await User.create(userData);
       return newUser;
     } catch (error) {
       throw new Error(`Error creating user: ${(error as Error).message}`);

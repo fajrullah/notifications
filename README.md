@@ -7,8 +7,6 @@ A simple application to send a happy birthday message to users on their birthday
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [API Usage](#api-usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
