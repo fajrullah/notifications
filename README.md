@@ -39,16 +39,16 @@ To seamlessly integrate the Birthday Greetings Scheduler into your program, you 
 To create a user, make a POST request to the /users endpoint with the following cURL command:
 
 ```bash
-   curl -X POST -H "Content-Type: application/json" -d '{
-        "firstName": "John",
-        "lastName": "Doe",
-        "birthday": "1990-01-01",
-        "location": {
-            "city": "New York",
-            "country": "USA",
-            "timezone": "America/New_York"
-        }
-    }' http://localhost:3000/users
+curl -X POST -H "Content-Type: application/json" -d '{
+    "firstName": "John",
+    "lastName": "Doe",
+    "birthday": "1990-01-01",
+    "location": {
+        "city": "New York",
+        "country": "USA",
+        "timezone": "America/New_York"
+    }
+}' http://localhost:3000/users
 
 ```
 
@@ -57,7 +57,7 @@ To create a user, make a POST request to the /users endpoint with the following 
 Retrieve user information by making a GET request to the /users endpoint.
 
 ```bash
-   curl --location 'localhost:3000/users'
+curl --location 'localhost:3000/users'
 ```
 
 
@@ -66,5 +66,5 @@ Retrieve user information by making a GET request to the /users endpoint.
 Delete a user by making a DELETE request to the /users/{userId} endpoint.
 
 ```bash
-   curl --location --request DELETE 'localhost:3000/users/:userId'
+curl --location --request DELETE 'localhost:3000/users/:userId'
 ```
