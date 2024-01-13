@@ -7,7 +7,8 @@ import * as schedule from 'node-schedule';
 
 import ScheduledTaskService from './services/ScheduleService';
 
-import OneTimeScheduleService from './services/SendingNotificationService';
+import { COLLECT_DATA_TIME } from './config';
+
 
 require('./db');
 
@@ -20,36 +21,12 @@ app.use(express.json());
 app.use(UserRoute);
 
 // Schedule a task to run every day particular time
-// schedule.scheduleJob('50 16 * * *', () => {
-//   console.log('Running scheduled task at 7:00 AM every day in WIB (Indonesia)');
+schedule.scheduleJob(COLLECT_DATA_TIME, () => {
+  console.log(`${COLLECT_DATA_TIME} Running scheduled task every day in WIB (Indonesia)`);
 
-//   const scheduledTaskService = new ScheduledTaskService();
+  const scheduledTaskService = new ScheduledTaskService();
 
-//   scheduledTaskService.runDailyTask();
-// });
-
-const scheduledTaskService = new ScheduledTaskService();
-
-scheduledTaskService.runDailyTask();
-
-const scheduledDates = [
-  new Date('2024-01-13T16:22:00'), 
-  new Date('2024-01-13T16:23:00'), 
-  new Date('2024-01-13T16:24:40'), 
-  new Date('2024-01-13T16:25:00'), 
-  new Date('2024-01-13T16:26:00'), 
-];
-
-// Iterate through the array and schedule tasks
-scheduledDates.forEach((runDateTime, index) => {
-  // Schedule a task for each date and time
-  schedule.scheduleJob(runDateTime, () => {
-    console.log(`Running scheduled task at ${runDateTime.toISOString()} (Index: ${index})`);
-
-    // Instantiate the service class and run the one-time task
-    const oneTimeTaskService = new OneTimeScheduleService();
-    oneTimeTaskService.runOneTimeTask();
-  });
+  scheduledTaskService.runDailyTask();
 });
 
 app.listen(port, () => {

@@ -41,6 +41,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "firstName": "John",
     "lastName": "Doe",
     "birthday": "1990-01-01",
+    "email": "testing@gmail.com",
     "location": {
         "city": "New York",
         "country": "USA",
