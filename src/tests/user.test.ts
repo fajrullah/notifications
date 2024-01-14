@@ -20,25 +20,6 @@ describe('UserService', () => {
     expect(users[0]).toHaveProperty('firstName', 'John');
   });
 
-  // it('should create a new user', async () => {
-  //   const createStub = sinon.stub(User, 'create');
-  //   createStub.resolves({ _id: new Types.ObjectId() } as IUser & Document<any, any, IUser>);
-
-  //   const userData = {
-  //     firstName: 'Jane',
-  //     lastName: 'Doe',
-  //     birthday: new Date('1995-05-05'),
-  //     location: {
-  //       city: 'London',
-  //       country: 'UK',
-  //       timezone: 'Europe/London',
-  //     },
-  //   };
-
-  //   const newUser = await UserService.createUser(userData);
-  //   expect(newUser).toHaveProperty('firstName', 'Jane');
-  // });
-
   it('should delete a user', async () => {
     const findByIdAndDeleteStub = sinon.stub(User, 'findByIdAndDelete');
     findByIdAndDeleteStub.resolves({ _id: '3', firstName: 'Jim', lastName: 'Doe' });
