@@ -1,5 +1,5 @@
 import moment from 'moment-timezone';
-import { SERVER_TIMEZONE } from '../config';
+import { MESSAGE_DELIVERY_TIME, SERVER_TIMEZONE } from '../config';
 import { MessageTemplate } from "../types";
 
 
@@ -22,9 +22,9 @@ export const TimezoneConverter = (timezone: string): string => {
     const currentLocalDateTime: moment.Moment = moment().tz(timezone);
 
     // make it Tomorrow based timezone
-    // const tomorrowAt8AM: moment.Moment = currentLocalDateTime.clone().add(1, 'day').startOf('day').add(MESSAGE_DELIVERY_TIME, 'hours');
+    const tomorrowAt8AM: moment.Moment = currentLocalDateTime.clone().add(1, 'day').startOf('day').add(MESSAGE_DELIVERY_TIME, 'hours');
     
-    const tomorrowAt8AM: moment.Moment = currentLocalDateTime.clone().add(10, 'seconds');
+    // const tomorrowAt8AM: moment.Moment = currentLocalDateTime.clone().add(10, 'seconds');
 
     const serverDateTime: moment.Moment = tomorrowAt8AM.clone().tz(SERVER_TIMEZONE.ID);
 
