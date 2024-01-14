@@ -28,13 +28,13 @@ export class EmailService extends DateInitializer {
 
       console.log('Email service response:', response.data);
 
-      Log.create(objectDefault);
+      await Log.create(objectDefault);
 
     } catch (error) {
       const axiosError = error as AxiosError;
       console.error('Error sending email:', axiosError.message);
       
-      Log.insertMany([
+      await Log.insertMany([
         {
           ...objectDefault,
           status: LogStatus.FAILED, 

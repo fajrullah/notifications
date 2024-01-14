@@ -1,5 +1,5 @@
 // src/services/OneTimeTaskService.ts
-import { MessageTemplate } from "../types";
+import { handlerMessage } from '../utils';
 import { EmailService } from "./EmailService";
 class OneTimeScheduleService {
     public async runOneTimeTask(value: any, event?: string): Promise<void> {
@@ -7,16 +7,9 @@ class OneTimeScheduleService {
       const sendingEmail = new EmailService();
       await sendingEmail.sendEmail({
         "email": value.email,
-        "message": this.handlerMessage(value),
+        "message": handlerMessage(value),
         payload: value
       })
-    }
-
-    private handlerMessage(value: any): string {
-      const { firstName, lastName } = value;
-      const originalText = MessageTemplate.BIRTHDAY_TEMPLATE;
-      const newText = originalText.replace(/\{full_name\}/g, `${firstName} ${lastName}`);
-      return newText
     }
 }
 

@@ -4,7 +4,8 @@ export enum LogStatus {
     SENT = 'SENT',
     FAILED = 'FAILED',
     CAN_NOT_PROCEED = 'CAN_NOT_PROCEED',
-    RETRY = 'RETRY'
+    RETRY = 'RETRY',
+    UNSENT = 'UNSENT',
 }
 
 export enum MessageTemplate {
