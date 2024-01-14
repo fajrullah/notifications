@@ -26,7 +26,12 @@ cd notifications
 # Install dependencies
 npm install
 
+docker-compose up -d
+
+npm run start-dev
+
 ```
+
 
 ## API USAGE
 
